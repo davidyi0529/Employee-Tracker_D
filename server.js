@@ -6,13 +6,14 @@ require('console.table');
 
 const promptMessages = {
     viewAllEmployees: "View All Employees",
-    viewByDepartment: "View All Employees By Department",
+    viewAllDepartments: "View All Departments",
     viewByManager: "View All Employees By Manager",
+    viewAllRoles: "View All Roles",
     addEmployee: "Add An Employee",
+    addDepartment: "Add A Department",
+    addRole: "Add A Role",
     removeEmployee: "Remove An Employee",
     updateRole: "Update Employee Role",
-    updateEmployeeManager: "Update Employee Manager",
-    viewAllRoles: "View All Roles",
     exit: "Exit"
 };
 
@@ -44,10 +45,12 @@ function prompt() {
             message: 'What would you like to do?',
             choices: [
                 promptMessages.viewAllEmployees,
-                promptMessages.viewByDepartment,
+                promptMessages.viewAllDepartments,
                 promptMessages.viewByManager,
                 promptMessages.viewAllRoles,
                 promptMessages.addEmployee,
+                promptMessages.addDepartment,
+                promptMessages.addRole,
                 promptMessages.removeEmployee,
                 promptMessages.updateRole,
                 promptMessages.exit
@@ -60,16 +63,28 @@ function prompt() {
                     viewAllEmployees();
                     break;
 
-                case promptMessages.viewByDepartment:
-                    viewByDepartment();
+                case promptMessages.viewAllDepartments:
+                    viewAllDepartments();
                     break;
 
                 case promptMessages.viewByManager:
                     viewByManager();
                     break;
+                
+                case promptMessages.viewAllRoles:
+                    viewAllRoles();
+                    break;
 
                 case promptMessages.addEmployee:
                     addEmployee();
+                    break;
+
+                case promptMessages.addDepartment:
+                    addDepartment();
+                    break;
+               
+                case promptMessages.addRole:
+                    addRole();
                     break;
 
                 case promptMessages.removeEmployee:
@@ -77,11 +92,7 @@ function prompt() {
                     break;
 
                 case promptMessages.updateRole:
-                    remove('role');
-                    break;
-
-                case promptMessages.viewAllRoles:
-                    viewAllRoles();
+                    updateRole();
                     break;
 
                 case promptMessages.exit:
@@ -109,12 +120,8 @@ function viewAllEmployees() {
     });
 }
 
-function viewByDepartment() {
-    const query = `SELECT department.name AS department, role.title, employee.id, employee.first_name, employee.last_name
-    FROM employee
-    LEFT JOIN role ON (role.id = employee.role_id)
-    LEFT JOIN department ON (department.id = role.department_id)
-    ORDER BY department.name;`;
+function viewAllDepartments() {
+    const query = `SELECT * from department;`;
     connection.query(query, (err, res) => {
         if (err) throw err;
         console.log(chalk.blueBright.bold(`====================================================================================`));
@@ -145,11 +152,7 @@ function viewByManager() {
 }
 
 function viewAllRoles() {
-    const query = `SELECT role.title, department.name AS department, role.salary
-    FROM employee
-    LEFT JOIN role ON (role.id = employee.role_id)
-    LEFT JOIN department ON (department.id = role.department_id)
-    ORDER BY role.title;`;
+    const query = `SELECT * from role;`;
     connection.query(query, (err, res) => {
         if (err) throw err;
         console.log(chalk.blueBright.bold(`====================================================================================`));
@@ -209,7 +212,7 @@ async function addEmployee() {
                     }
                 }
             }
-            console.log('Employee has been added. Please view all employee to verify...');
+            // console.log('Employee has been added. Please view all employee to verify...');
             connection.query(
                 'INSERT INTO employee SET ?',
                 {
@@ -218,8 +221,11 @@ async function addEmployee() {
                     role_id: roleId,
                     manager_id: parseInt(managerId)
                 },
-                (err, res) => {
+                    (err, res) => {
                     if (err) throw err;
+                    console.log(chalk.redBright.bold(`====================================================================================`));
+                    console.log(`                              ` + chalk.green.bold(`Employee Successfully Added`));
+                    console.log(chalk.redBright.bold(`====================================================================================`));
                     prompt();
 
                 }
@@ -228,6 +234,80 @@ async function addEmployee() {
     });
 
 }
+
+async function addDepartment() {
+
+    await inquirer.prompt([
+        {
+            name: "name",
+            type: "input",
+            message: "What is the name of the new department?  "
+        }
+        ])
+            .then(function (response) {
+                addDepartment(response);
+            })
+        
+            function addDepartment(data) {
+            connection.query(
+                'INSERT INTO department SET ?',
+                {
+                    name: data.name
+                },
+                    (err, res) => {
+                    if (err) throw err;
+                    console.log(chalk.redBright.bold(`====================================================================================`));
+                    console.log(`                              ` + chalk.green.bold(`Department Successfully Added`));
+                    console.log(chalk.redBright.bold(`====================================================================================`));
+                    prompt();
+                }
+            )}
+
+};
+
+async function addRole() {
+
+    await inquirer.prompt([
+        {
+            name: "title",
+            type: "input",
+            message: "What is the name of the new employee role?  "
+        },
+        {
+            name: "salary",
+            type: "input",
+            message: "How much is the salary of the new role?  "
+        },
+        {
+            name: "id",
+            type: "list",
+            message: "In which department is the new role?  ",
+            choices: showDepartments 
+        }
+        ])
+            .then(function (response) {
+                addRole(response);
+            })
+        
+            function addRole(data) {
+            connection.query(
+                'INSERT INTO role SET ?',
+                {
+                    title: data.title,
+                    salary: data.salary,
+                    department_id: data.id
+                },
+                    (err, res) => {
+                    if (err) throw err;
+                    console.log(chalk.redBright.bold(`====================================================================================`));
+                    console.log(`                              ` + chalk.green.bold(`Role Successfully Added`));
+                    console.log(chalk.redBright.bold(`====================================================================================`));
+                    prompt();
+                }
+            )}
+
+};
+
 function remove(input) {
     const promptQ = {
         yes: "yes",
@@ -331,3 +411,9 @@ function askName() {
         }
     ]);
 }
+
+var showDepartments;
+
+connection.query('SELECT * from department', (err, res) => {
+    showDepartments = res.map(dep => ({ name: dep.name, value: dep.id }));
+});
