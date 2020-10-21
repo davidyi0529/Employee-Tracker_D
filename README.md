@@ -2,7 +2,7 @@
 
 <br />
 
-# Employee-Tracker_D
+# Employee-Tracker_D is a command line application for managing a company's employees using node, inquirer, and MySQL.
 
 <br />
 
@@ -12,27 +12,22 @@
 <br />
 <br />
 
-### Link to the App Demo 
-- https://note-taker-d.herokuapp.com/
+### Link to the App Repo 
+- https://github.com/davidyi0529/Employee-Tracker_D
 
 <br />
 
-Note-Taker_D is a simple note taking application that allows you to save notes with a title and plain text. Powered by ExpressJS, the Note Taker app makes creating, viewing, and deleting notes a cinch!
+Employee-Tracker_D 
 
 <br />
 
-### Screenshot of landing page:
+### Screenshot of initialized app:
 
-<img src="https://github.com/davidyi0529/Note-Taker_D/blob/main/Public/assets/images/landing%20page.png?raw=true" width="800" height="600">
+<img src="" width="800" height="600">
 
-### Screenshot of notes page:
+### Demo of app page:
 
-<img src="https://github.com/davidyi0529/Note-Taker_D/blob/main/Public/assets/images/notes%20page.png?raw=true" width="800" height="600">
-
-
-### Demo of notes page:
-
-<img src="https://github.com/davidyi0529/Note-Taker_D/blob/main/Public/assets/images/demo.gif?raw=true" width="800" height="600">
+<img src="" width="800" height="600">
 
 <br />
 <br />
@@ -67,12 +62,12 @@ Note-Taker_D is a simple note taking application that allows you to save notes w
 <br />
 
 ```bash
-git clone https://github.com/davidyi0529/Note-Taker_D.git
+git clone https://github.com/davidyi0529/Employee-Tracker_D.git
 ```
 
 <br />
 
-> Next, install the application dependencies inside the Note Taker directory.
+> Next, install the application dependencies inside the Employee-Tracker directory.
 
 <br />
 
@@ -82,17 +77,17 @@ npm install
 
 <br />
 
-> Finally, run the node server locally.
+> Connect the Asset files to your MySQL database.
+
+<br />
+
+> Finally, you can start the application.
 
 <br />
 
 ```bash
-node server.js
+npm start
 ```
-
-<br />
-
-> Now, open the application on port 3000 at the URL: http://localhost:3000/.
 
 <br />
 <br />
@@ -109,10 +104,12 @@ node server.js
 
 The following were used for this project.
 
-- `Javascript // Node.js`
-- `Express`
-- `CSS // Bootstrap`
-- `Heroku`
+- `Javascript`
+- `Node.js`
+- `jQuery`
+- `ES6+`
+- `MySQL`
+
 
 <br />
 <br />
@@ -132,11 +129,15 @@ The following were used for this project.
 
 ><a href="https://www.npmjs.com/" target="_blank">`npm, Inc`</a> 
 
-><a href="https://expressjs.com/" target="_blank">`Express`</a> 
+><a href="https://www.npmjs.com/package/inquirer" target="_blank">`Inquirer`</a> 
 
-><a href="https://www.heroku.com/home" target="_blank">`Heroku`</a>
+><a href="https://www.npmjs.com/package/chalk" target="_blank">`Chalk`</a> 
 
-><a href="https://getbootstrap.com/" target="_blank">`Bootstrap`</a>
+><a href="https://www.npmjs.com/package/figlet" target="_blank">`Figlet`</a> 
+
+><a href="https://www.npmjs.com/package/console.table" target="_blank">`Console.table`</a> 
+
+><a href="https://www.mysql.com/" target="_blank">`MySQL`</a> 
 
 ><a href="https://shields.io/ " target="_blank">`Shields.io`</a> 
 
