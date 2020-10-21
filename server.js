@@ -26,13 +26,13 @@ const connection = mysql.createConnection({
 
 connection.connect(err => {
     if (err) throw err;
-    console.log(chalk.blueBright.bold(`====================================================================================`));
+    console.log(chalk.blueBright.bold(`=============================================================================================================`));
     console.log(``);
-    console.log(chalk.greenBright.bold(figlet.textSync('Employee Tracker')));
+    console.log(chalk.greenBright.bold(figlet.textSync('Employee - Tracker _ D')));
     console.log(``);
     console.log(`                                                          ` + chalk.blueBright.bold('Created By: David Yi'));
     console.log(``);
-    console.log(chalk.blueBright.bold(`====================================================================================`));
+    console.log(chalk.blueBright.bold(`=============================================================================================================`));
     prompt();
 });
 
@@ -145,7 +145,7 @@ function viewByManager() {
 }
 
 function viewAllRoles() {
-    const query = `SELECT role.title, employee.id, employee.first_name, employee.last_name, department.name AS department
+    const query = `SELECT role.title, department.name AS department, role.salary
     FROM employee
     LEFT JOIN role ON (role.id = employee.role_id)
     LEFT JOIN department ON (department.id = role.department_id)
@@ -154,6 +154,8 @@ function viewAllRoles() {
         if (err) throw err;
         console.log(chalk.blueBright.bold(`====================================================================================`));
         console.log(`                              ` + chalk.green.bold(`Current Employee Roles:`));
+        console.log(chalk.blueBright.bold(`====================================================================================`));
+        console.table(res);
         console.log(chalk.blueBright.bold(`====================================================================================`));
         prompt();
     });
