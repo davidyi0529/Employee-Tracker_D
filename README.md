@@ -2,7 +2,7 @@
 
 <br />
 
-# Employee-Tracker_D is a command line application for managing a company's employees using node, inquirer, and MySQL.
+# Employee-Tracker_D
 
 <br />
 
@@ -17,7 +17,7 @@
 
 <br />
 
-Employee-Tracker_D 
+Employee-Tracker_D is a command line application for managing a company's employees using node, inquirer, and MySQL.
 
 <br />
 
