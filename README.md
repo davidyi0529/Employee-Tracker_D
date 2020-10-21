@@ -23,11 +23,19 @@ Employee-Tracker_D is a command line application for managing a company's employ
 
 ### Screenshot of initialized app:
 
-<img src="" width="800" height="600">
+<img src="https://github.com/davidyi0529/Employee-Tracker_D/blob/main/assets/images/Start%20page.png?raw=true" width="800" height="600">
 
-### Demo of app page:
+### Screenshot of initialized app:
 
-<img src="" width="800" height="600">
+<img src="https://github.com/davidyi0529/Employee-Tracker_D/blob/main/assets/images/EmployeeAllView.png?raw=true" width="800" height="600">
+
+<br />
+<br />
+
+
+### Demo of app:
+
+Coming Soon!!!
 
 <br />
 <br />
