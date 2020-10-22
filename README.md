@@ -115,7 +115,6 @@ The following were used for this project.
 - `Javascript`
 - `Node.js`
 - `jQuery`
-- `ES6+`
 - `MySQL`
 
 
@@ -142,8 +141,6 @@ The following were used for this project.
 ><a href="https://www.npmjs.com/package/chalk" target="_blank">`Chalk`</a> 
 
 ><a href="https://www.npmjs.com/package/figlet" target="_blank">`Figlet`</a> 
-
-><a href="https://www.npmjs.com/package/console.table" target="_blank">`Console.table`</a> 
 
 ><a href="https://www.mysql.com/" target="_blank">`MySQL`</a> 
 
