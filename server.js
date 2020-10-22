@@ -212,7 +212,6 @@ async function addEmployee() {
                     }
                 }
             }
-            // console.log('Employee has been added. Please view all employee to verify...');
             connection.query(
                 'INSERT INTO employee SET ?',
                 {
@@ -305,8 +304,13 @@ async function addRole() {
                     prompt();
                 }
             )}
-
 };
+
+var showDepartments;
+
+connection.query('SELECT * from department', (err, res) => {
+    showDepartments = res.map(dep => ({ name: dep.name, value: dep.id }));
+});
 
 function remove(input) {
     const promptQ = {
@@ -343,7 +347,7 @@ async function removeEmployee() {
         {
             id: answer.first
         },
-        function (err) {
+            (err) => {
             if (err) throw err;
             console.log(chalk.redBright.bold(`====================================================================================`));
             console.log(`                              ` + chalk.redBright.bold(`Employee Successfully Removed`));
@@ -363,7 +367,6 @@ function askId() {
         }
     ]);
 }
-
 
 async function updateRole() {
     const employeeId = await inquirer.prompt(askId());
@@ -411,9 +414,3 @@ function askName() {
         }
     ]);
 }
-
-var showDepartments;
-
-connection.query('SELECT * from department', (err, res) => {
-    showDepartments = res.map(dep => ({ name: dep.name, value: dep.id }));
-});
