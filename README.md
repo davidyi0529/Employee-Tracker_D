@@ -6,7 +6,7 @@
 
 <br />
 
-![Languages](https://img.shields.io/github/languages/top/davidyi0529/Employee-Tracker_D )
+![Languages](https://img.shields.io/github/languages/top/davidyi0529/Employee-Tracker_D)
 <br />
 ![Last Commit](https://img.shields.io/github/last-commit/davidyi0529/Employee-Tracker_D)
 <br />
@@ -21,21 +21,13 @@ Employee-Tracker_D is a command line application for managing a company's employ
 
 <br />
 
-### Screenshot of initialized app:
+### Screenshots of application:
 
 <img src="https://github.com/davidyi0529/Employee-Tracker_D/blob/main/assets/images/Start%20page.png?raw=true" width="800" height="600">
 
-### Screenshot of initialized app:
-
 <img src="https://github.com/davidyi0529/Employee-Tracker_D/blob/main/assets/images/EmployeeAllView.png?raw=true" width="800" height="600">
 
-<br />
-<br />
-
-
-### Demo of app:
-
-Coming Soon!!!
+[<img src="https://github.com/davidyi0529/Employee-Tracker_D/blob/main/assets/images/demo.png?raw=true" width="800" height="600">](https://youtu.be/xMKa4lQujmM)
 
 <br />
 <br />
@@ -48,7 +40,7 @@ Coming Soon!!!
 ## Table of Contents
 
 - [Installation](#installation)
-- [Features](#features)
+- [Technologies](#technologies)
 - [Credits](#credits)
 - [Support](#support)
 - [License](#license)
@@ -65,17 +57,17 @@ Coming Soon!!!
 
 <br />
 
-> To run the application locally, first clone this repository with the following command.
+1. To run the application locally, first clone this repository with the following command.
 
 <br />
 
 ```bash
-git clone https://github.com/davidyi0529/Employee-Tracker_D.git
+ git clone https://github.com/davidyi0529/Employee-Tracker_D.git
 ```
 
 <br />
 
-> Next, install the application dependencies inside the Employee-Tracker directory.
+2. Next, install the application dependencies inside the Employee-Tracker directory.
 
 <br />
 
@@ -85,11 +77,11 @@ npm install
 
 <br />
 
-> Connect the Asset files to your MySQL database.
+3. Connect the Asset files to your MySQL database.
 
 <br />
 
-> Finally, you can start the application.
+4. Start the application.
 
 <br />
 
@@ -105,7 +97,7 @@ npm start
 <br />
 <br />
 
-## Features
+## Technologies
 
 <br />
 <br />
@@ -116,7 +108,6 @@ The following were used for this project.
 - `Node.js`
 - `jQuery`
 - `MySQL`
-
 
 <br />
 <br />
@@ -160,9 +151,14 @@ The following were used for this project.
 
 Reach out to me at one of the following places!
 
-> Linkedin @ <a href="www.linkedin.com/in/davidyi0529" target="_blank">`davidyi0529`</a> 
+## David Yi 
 
-> Github @ <a href="https://github.com/davidyi0529" target="_blank">`davidyi0529`</a>
+
+[![Portfolio](https://img.shields.io/badge/portfolio-8B89CC?&style=for-the-badge)](https://davidyi0529.github.io/Updated-Portfolio_D/)
+<br />
+[![GitHub](https://img.shields.io/badge/github-%23100000.svg?&style=for-the-badge&logo=github&logoColor=white)](https://github.com/davidyi0529)
+<br />
+[![LinkedIn](https://img.shields.io/badge/linkedin-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white)](http://www.linkedin.com/in/davidyi0529)
 
 <br />
 <br />
